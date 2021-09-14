@@ -8,8 +8,8 @@ import {
 
 import { v4 as uuid } from "uuid";
 
-@Entity("mangas")
-class Manga {
+@Entity("series")
+class Series {
   @PrimaryColumn()
   id: string;
 
@@ -18,6 +18,12 @@ class Manga {
 
   @Column()
   publisher: string;
+
+  @Column()
+  author: string;
+
+  @Column()
+  country_of_origin: string;
 
   @Column()
   current_volumes: number;
@@ -38,4 +44,4 @@ class Manga {
   }
 }
 
-export { Manga };
+export { Series };

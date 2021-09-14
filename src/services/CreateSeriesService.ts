@@ -1,21 +1,23 @@
 import { getCustomRepository } from "typeorm";
-import { MangaRepository } from "../repositories/MangaRepository";
+import { SeriesRepository } from "../repositories/SeriesRepository";
 
 interface IMangaRequest {
   name: string;
   publisher: string;
+  author: string;
+  country_of_origin: string;
   current_volumes: number;
   current_origin_volumes: number;
 }
 
-class CreateMangaService {
-  async exeecute({
+class CreateSeriesService {
+  async execute({
     name,
     publisher,
     current_volumes,
     current_origin_volumes,
   }: IMangaRequest) {
-    const mangaRepository = getCustomRepository(MangaRepository);
+    const mangaRepository = getCustomRepository(SeriesRepository);
 
     const mangaAlreadyExists = await mangaRepository.findOne({
       name,
@@ -38,4 +40,4 @@ class CreateMangaService {
   }
 }
 
-export { CreateMangaService };
+export { CreateSeriesService };
