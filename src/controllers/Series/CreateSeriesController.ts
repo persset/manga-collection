@@ -14,7 +14,7 @@ class CreateSeriesController {
 
     const createSeriesService = new CreateSeriesService();
 
-    const manga = await createSeriesService.execute({
+    const series = await createSeriesService.execute({
       name,
       publisher,
       author,
@@ -23,7 +23,7 @@ class CreateSeriesController {
       current_volumes,
     });
 
-    return response.json(manga);
+    return response.json(series);
   }
 }
 

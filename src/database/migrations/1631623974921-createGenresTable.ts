@@ -31,5 +31,7 @@ export class createGenresTable1631623974921 implements MigrationInterface {
     );
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {}
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropTable("genres");
+  }
 }
