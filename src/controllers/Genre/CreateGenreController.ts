@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateGenreService } from "../services/CreateGenreService";
+import { CreateGenreService } from "../../services/CreateGenreService";
 
 class CreateGenreController {
   async handle(request: Request, response: Response) {

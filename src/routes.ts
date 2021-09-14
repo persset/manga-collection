@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { CreateGenreController } from "./controllers/CreateGenreController";
-import { CreateSeriesController } from "./controllers/CreateSeriesController";
-import { CreateUserController } from "./controllers/CreateUserController";
+import { CreateGenreController } from "./controllers/Genre/CreateGenreController";
+import { CreateSeriesController } from "./controllers/Series/CreateSeriesController";
+import { CreateUserController } from "./controllers/User/CreateUserController";
 
 const router = Router();
 
