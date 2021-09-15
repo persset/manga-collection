@@ -10,17 +10,19 @@ export class createSeriesGenresTable1631626216166
         columns: [
           {
             name: "id",
-            type: "string",
+            type: "varchar",
             isPrimary: true,
             generationStrategy: "uuid",
           },
           {
             name: "series_id",
-            type: "string",
+            type: "varchar",
+            isNullable: true,
           },
           {
             name: "genre_id",
-            type: "string",
+            type: "varchar",
+            isNullable: true,
           },
           {
             name: "created_at",

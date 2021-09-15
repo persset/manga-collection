@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class createMangasTable1631455328140 implements MigrationInterface {
+export class createPublisherTable1631741483028 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "series",
+        name: "publisher",
         columns: [
           {
             name: "id",
@@ -15,26 +15,6 @@ export class createMangasTable1631455328140 implements MigrationInterface {
           {
             name: "name",
             type: "varchar",
-          },
-          {
-            name: "publisher_id",
-            type: "varchar",
-          },
-          {
-            name: "author",
-            type: "varchar",
-          },
-          {
-            name: "country_of_origin",
-            type: "varchar",
-          },
-          {
-            name: "current_volumes",
-            type: "integer",
-          },
-          {
-            name: "current_origin_volumes",
-            type: "integer",
           },
           {
             name: "created_at",
@@ -52,6 +32,6 @@ export class createMangasTable1631455328140 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("series");
+    await queryRunner.dropTable("publisher");
   }
 }
