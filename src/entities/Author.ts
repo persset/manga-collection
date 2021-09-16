@@ -8,7 +8,7 @@ import {
 
 import { v4 as uuid } from "uuid";
 
-@Entity("author")
+@Entity("authors")
 class Author {
   @PrimaryColumn()
   id: string;

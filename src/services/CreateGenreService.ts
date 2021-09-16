@@ -8,6 +8,7 @@ interface IGenreRequest {
 class CreateGenreService {
   async execute({ name }: IGenreRequest) {
     const genreRepository = getCustomRepository(GenreRepository);
+
     const genreAlreadyExists = await genreRepository.findOne({
       name,
     });

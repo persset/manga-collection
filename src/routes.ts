@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { CreateAuthorController } from "./controllers/Author/CreateAuthorController";
 import { CreateGenreController } from "./controllers/Genre/CreateGenreController";
 import { CreatePublisherController } from "./controllers/Publisher/CreatePublisherController";
 import { CreateSeriesController } from "./controllers/Series/CreateSeriesController";
@@ -10,6 +11,7 @@ const createUserController = new CreateUserController();
 const createSeriesController = new CreateSeriesController();
 const createGenreController = new CreateGenreController();
 const createPublisherController = new CreatePublisherController();
+const createAuthorController = new CreateAuthorController();
 
 //Rotas de Usuário
 router.post("/users", createUserController.handle);
@@ -22,5 +24,8 @@ router.post("/genres", createGenreController.handle);
 
 //Rotas para Editoras
 router.post("/publishers", createPublisherController.handle);
+
+//Rotas para Autores
+router.post("/authors", createAuthorController.handle);
 
 export { router };

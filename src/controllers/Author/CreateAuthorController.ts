@@ -7,7 +7,7 @@ class CreateAuthorController {
 
     const createAuthorService = new CreateAuthorService();
 
-    const author = createAuthorService.execute({
+    const author = await createAuthorService.execute({
       name,
     });
 

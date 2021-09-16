@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class createSeriesGenresTable1631626216166
+export class CreateSeriesGenresTable1631626216166
   implements MigrationInterface
 {
   public async up(queryRunner: QueryRunner): Promise<void> {
