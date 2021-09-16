@@ -1,4 +1,4 @@
-import { CategoryRepository } from "../repositories/CategoryRepository";
+import { CategoryRepository } from "../../repositories/CategoryRepository";
 import { getCustomRepository } from "typeorm";
 
 interface ICategoryRequest {

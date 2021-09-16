@@ -1,4 +1,4 @@
-import { PublisherRepository } from "../repositories/PublisherRepository";
+import { PublisherRepository } from "../../repositories/PublisherRepository";
 import { getCustomRepository } from "typeorm";
 
 interface IPublisher {

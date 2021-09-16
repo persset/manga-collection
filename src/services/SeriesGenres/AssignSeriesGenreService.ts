@@ -1,4 +1,4 @@
-import { SeriesGenreRepository } from "../repositories/SeriesGenreRepository";
+import { SeriesGenreRepository } from "../../repositories/SeriesGenreRepository";
 import { getCustomRepository } from "typeorm";
 
 interface ISeriesGenreRequest {

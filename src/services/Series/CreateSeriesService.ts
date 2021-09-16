@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm";
-import { SeriesRepository } from "../repositories/SeriesRepository";
+import { SeriesRepository } from "../../repositories/SeriesRepository";
 
 interface IMangaRequest {
   name: string;

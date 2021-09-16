@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { AssignSeriesGenreService } from "../../services/AssignSeriesGenreService";
+import { AssignSeriesGenreService } from "../../services/SeriesGenres/AssignSeriesGenreService";
 
 class AssignSeriesGenreController {
   async handle(request: Request, response: Response) {

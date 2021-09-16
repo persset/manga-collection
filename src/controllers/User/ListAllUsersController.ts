@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ListAllUsersService } from "../../services/ListAllUsersService";
+import { ListAllUsersService } from "../../services/User/ListAllUsersService";
 class ListAllUsersController {
   async handle(request: Request, response: Response) {
     const listUserService = new ListAllUsersService();

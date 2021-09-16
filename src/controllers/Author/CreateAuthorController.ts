@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateAuthorService } from "../../services/CreateAuthorService";
+import { CreateAuthorService } from "../../services/Author/CreateAuthorService";
 
 class CreateAuthorController {
   async handle(request: Request, response: Response) {

@@ -1,4 +1,4 @@
-import { AuthorRepository } from "../repositories/AuthorRepository";
+import { AuthorRepository } from "../../repositories/AuthorRepository";
 import { getCustomRepository } from "typeorm";
 
 interface IAuthorRequest {

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreatePublisherService } from "../../services/CreatePublisherService";
+import { CreatePublisherService } from "../../services/Publisher/CreatePublisherService";
 
 class CreatePublisherController {
   async handle(request: Request, response: Response) {
