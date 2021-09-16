@@ -8,7 +8,7 @@ import {
 
 import { v4 as uuid } from "uuid";
 
-@Entity("publisher")
+@Entity("publishers")
 class Publisher {
   @PrimaryColumn()
   id: string;

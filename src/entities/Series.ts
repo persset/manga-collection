@@ -4,9 +4,13 @@ import {
   PrimaryColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  JoinColumn,
+  ManyToOne,
 } from "typeorm";
 
 import { v4 as uuid } from "uuid";
+import { Author } from "./Author";
+import { Publisher } from "./Publisher";
 
 @Entity("series")
 class Series {
@@ -17,10 +21,18 @@ class Series {
   name: string;
 
   @Column()
-  publisher: string;
+  publisher_id: string;
+
+  @JoinColumn({ name: "publisher_id" })
+  @ManyToOne(() => Publisher)
+  publisherID: Publisher;
 
   @Column()
-  author: string;
+  author_id: string;
+
+  @JoinColumn({ name: "author_id" })
+  @ManyToOne(() => Author)
+  authorID: Author;
 
   @Column()
   country_of_origin: string;

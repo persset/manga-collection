@@ -5,8 +5,8 @@ class CreateSeriesController {
   async handle(request: Request, response: Response) {
     const {
       name,
-      publisher,
-      author,
+      publisher_id,
+      author_id,
       country_of_origin,
       current_volumes,
       current_origin_volumes,
@@ -16,8 +16,8 @@ class CreateSeriesController {
 
     const series = await createSeriesService.execute({
       name,
-      publisher,
-      author,
+      publisher_id,
+      author_id,
       country_of_origin,
       current_origin_volumes,
       current_volumes,

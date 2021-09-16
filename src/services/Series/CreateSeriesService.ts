@@ -1,10 +1,10 @@
 import { getCustomRepository } from "typeorm";
 import { SeriesRepository } from "../../repositories/SeriesRepository";
 
-interface IMangaRequest {
+interface ISeriesRequest {
   name: string;
-  publisher: string;
-  author: string;
+  publisher_id: string;
+  author_id: string;
   country_of_origin: string;
   current_volumes: number;
   current_origin_volumes: number;
@@ -13,13 +13,15 @@ interface IMangaRequest {
 class CreateSeriesService {
   async execute({
     name,
-    publisher,
+    publisher_id,
+    author_id,
+    country_of_origin,
     current_volumes,
     current_origin_volumes,
-  }: IMangaRequest) {
-    const mangaRepository = getCustomRepository(SeriesRepository);
+  }: ISeriesRequest) {
+    const seriesRepository = getCustomRepository(SeriesRepository);
 
-    const mangaAlreadyExists = await mangaRepository.findOne({
+    const mangaAlreadyExists = await seriesRepository.findOne({
       name,
     });
 
@@ -27,16 +29,18 @@ class CreateSeriesService {
       throw new Error("Mangá já cadastrado");
     }
 
-    const manga = mangaRepository.create({
+    const series = seriesRepository.create({
       name,
-      publisher,
+      publisher_id,
+      author_id,
+      country_of_origin,
       current_volumes,
       current_origin_volumes,
     });
 
-    await mangaRepository.save(manga);
+    await seriesRepository.save(series);
 
-    return manga;
+    return series;
   }
 }
 
