@@ -2,7 +2,7 @@ import { getCustomRepository } from "typeorm";
 import { AuthorRepository } from "../../repositories/AuthorRepository";
 import { classToPlain } from "class-transformer";
 
-class SearchAuthorService {
+class ListSpecificAuthorService {
   async execute(authorID: string) {
     const authorRepository = getCustomRepository(AuthorRepository);
 
@@ -16,4 +16,4 @@ class SearchAuthorService {
   }
 }
 
-export { SearchAuthorService };
+export { ListSpecificAuthorService };
