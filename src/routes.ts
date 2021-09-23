@@ -2,6 +2,7 @@ import { Router } from "express";
 import { CreateAuthorController } from "./controllers/Author/CreateAuthorController";
 import { ListAllAuthorsController } from "./controllers/Author/ListAllAuthorsController";
 import { ListSpecificAuthorController } from "./controllers/Author/ListSpecificAuthorController";
+import { UpdateAuthorController } from "./controllers/Author/UpdateAuthorController";
 import { CreateCategoryController } from "./controllers/Category/CreateCategoryController";
 import { ListAllCategoriesController } from "./controllers/Category/ListAllCategoriesController";
 import { CreateGenreController } from "./controllers/Genre/CreateGenreController";
@@ -43,6 +44,7 @@ const listAllPublishersController = new ListAllPublishersController();
 const createAuthorController = new CreateAuthorController();
 const listAllAuthorsController = new ListAllAuthorsController();
 const listSpecificAuthorController = new ListSpecificAuthorController();
+const updateAuthorController = new UpdateAuthorController();
 
 //Objetos para controllers das categorias
 const createCategoryController = new CreateCategoryController();
@@ -72,6 +74,7 @@ router.get("/publishers", listAllPublishersController.handle);
 router.post("/authors", createAuthorController.handle);
 router.get("/authors", listAllAuthorsController.handle);
 router.get("/authors/:id", listSpecificAuthorController.handle);
+router.put("/authors/update/:id", updateAuthorController.handle);
 
 //Rotas para Categorias
 router.post("/categories", createCategoryController.handle);
