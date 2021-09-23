@@ -2,7 +2,14 @@ import "reflect-metadata";
 import express, { Request, Response, NextFunction } from "express";
 import "express-async-errors";
 
-import { router } from "./routes";
+//Router Imports
+import { authorRouter } from "./routes/AuthorRoutes";
+import { categoryRouter } from "./routes/CategoryRoutes";
+import { genreRouter } from "./routes/GenreRoutes";
+import { publisherRouter } from "./routes/PublisherRoutes";
+import { seriesGenresRouter } from "./routes/SeriesGenres";
+import { seriesRouter } from "./routes/SeriesRoutes";
+import { userRouter } from "./routes/UserRoutes";
 
 import "./database";
 
@@ -10,7 +17,15 @@ const app = express();
 
 app.use(express.json());
 
-app.use(router);
+app.use(
+  userRouter,
+  authorRouter,
+  categoryRouter,
+  genreRouter,
+  publisherRouter,
+  seriesGenresRouter,
+  seriesRouter
+);
 
 app.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {
