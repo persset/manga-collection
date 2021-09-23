@@ -13,32 +13,40 @@ import { ListAllSeriesController } from "./controllers/Series/ListAllSeriesContr
 import { ListSpecificSeriesController } from "./controllers/Series/ListSpecificSeriesController";
 import { CreateUserController } from "./controllers/User/CreateUserController";
 import { ListAllUsersController } from "./controllers/User/ListAllUsersController";
+import { ListSpecificUserController } from "./controllers/User/ListSpecificUserController";
 
 const router = Router();
 
+//Objetos para controllers de usuários
 const createUserController = new CreateUserController();
 const listAllUsersController = new ListAllUsersController();
-
+const listSpecificUserController = new ListSpecificUserController();
+//Objetos para controllers das obras
 const createSeriesController = new CreateSeriesController();
 const listAllSeriesController = new ListAllSeriesController();
 const listSpecificSeriesController = new ListSpecificSeriesController();
 
+//Objetos para controllers dos gêneros
 const createGenreController = new CreateGenreController();
 const listAllGenresController = new ListAllGenresController();
 
+//Objetos para controllers das editoras
 const createPublisherController = new CreatePublisherController();
 const listAllPublishersController = new ListAllPublishersController();
 
+//Objetos para controllers dos autores
 const createAuthorController = new CreateAuthorController();
 const listAllAuthorsController = new ListAllAuthorsController();
 const listSpecificAuthorController = new ListSpecificAuthorController();
 
+//Objetos para controllers das categorias
 const createCategoryController = new CreateCategoryController();
 const listAllCategoriesController = new ListAllCategoriesController();
 
 //Rotas de Usuário
 router.post("/users", createUserController.handle);
 router.get("/users", listAllUsersController.handle);
+router.get("/users/:id", listSpecificUserController.handle);
 
 //Rotas de Series
 router.post("/series", createSeriesController.handle);
