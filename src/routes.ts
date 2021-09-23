@@ -14,6 +14,7 @@ import { ListSpecificSeriesController } from "./controllers/Series/ListSpecificS
 import { CreateUserController } from "./controllers/User/CreateUserController";
 import { ListAllUsersController } from "./controllers/User/ListAllUsersController";
 import { ListSpecificUserController } from "./controllers/User/ListSpecificUserController";
+import { UpdateUserController } from "./controllers/User/UpdateUserController";
 
 const router = Router();
 
@@ -21,6 +22,8 @@ const router = Router();
 const createUserController = new CreateUserController();
 const listAllUsersController = new ListAllUsersController();
 const listSpecificUserController = new ListSpecificUserController();
+const updateUserController = new UpdateUserController();
+
 //Objetos para controllers das obras
 const createSeriesController = new CreateSeriesController();
 const listAllSeriesController = new ListAllSeriesController();
@@ -47,6 +50,7 @@ const listAllCategoriesController = new ListAllCategoriesController();
 router.post("/users", createUserController.handle);
 router.get("/users", listAllUsersController.handle);
 router.get("/users/:id", listSpecificUserController.handle);
+router.put("/users/:id", updateUserController.handle);
 
 //Rotas de Series
 router.post("/series", createSeriesController.handle);
